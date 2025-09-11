@@ -1,0 +1,25 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerInput : MonoBehaviour
+{
+    public float JumpPower = 1.0f;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            rb.linearVelocity = Vector2.up * JumpPower;
+        }
+        
+    }
+}
